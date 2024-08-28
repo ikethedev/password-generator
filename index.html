@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Password generator app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>Password Generator</h1>
+      <section class="flex password_container">
+        <input class="password" placeholder="P4$5W0rD!" />
+        <div class="flex copy_container">
+          <p class="copied_message hide">COPIED!</p>
+          <img class="icon" src="../files/assets/images/icon-copy.svg" alt="" />
+        </div>
+      </section>
+      <section class="container">
+        <div class="password_slider_container">
+          <div class="password_length_container flex">
+            <h2>Character Length</h2>
+            <p class="number" value="0">0</p>
+          </div>
+          <div class="input_container">
+            <input id="range_slider" class="range_slider" type="range" min="0" max="20" value="0" />
+            <div id="progress__bar"></div>
+          </div>
+        </div>
+        <article class="options_container">
+          <div>
+            <input id="uppercase" type="checkbox" />
+            <label for="">Include Uppercase Letters</label>
+          </div>
+          <div>
+            <input id="lowercase" type="checkbox" />
+            <label for="">Include Lowercase Letters</label>
+          </div>
+          <div>
+            <input id="numbers" type="checkbox" />
+            <label for="">Include Numbers</label>
+          </div>
+          <div>
+            <input id="symbol" type="checkbox" />
+            <label for="">Include Symbols</label>
+          </div>
+          <div class="password_strength_container">
+            <p class="password_title">STRENGTH</p>
+            <div class="flex strength_meter">
+              <p class="uppercase password_strength">Too Weak!</p>
+              <div class="flex box_container">
+                <div id="box__one" class="box"></div>
+                <div id="box__two" class="box"></div>
+                <div id="box__three" class="box"></div>
+                <div id="box__four" class="box"></div>
+              </div>
+            
+            </div>
+          </div>
+        </article>
+        <button>
+          Generate
+        </button>
+      </section>
+    </main>
+  </body>
+</html>

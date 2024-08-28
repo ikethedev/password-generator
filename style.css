@@ -1,0 +1,366 @@
+:root {
+  --app-background: hsl(248, 10%, 15%);
+  --black: hsl(248, 15%, 11%);
+  --dark-gray: hsl(251, 9%, 53%);
+  --background: hsl(240, 33%, 1%);
+  --bright-green: hsl(127, 100%, 82%);
+  --red: hsl(0, 91%, 63%);
+  --red-orange: hsl(13, 95%, 66%);
+  --yellow: hsl(42, 91%, 68%);
+  --almost-white: #e6e5ea;
+  --neon-green: #a4ffaf;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  background-color: var(--background);
+  color: var(--almost-white);
+  font-family: "JetBrains Mono", monospace;
+}
+
+main {
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1000px) {
+  main {
+    width: 35%;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  background-color: var(--app-background);
+  padding-bottom: 1em;
+}
+
+h1 {
+  text-align: center;
+  color: var(--dark-gray);
+  margin-bottom: 1em;
+  margin-top: 2em;
+}
+
+.password_container {
+  background-color: var(--app-background);
+  justify-content: space-between;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.password {
+  display: flex;
+  align-content: center;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.copy_container {
+  align-items: center;
+  gap: 0.5em;
+  background-color: var(--app-background);
+}
+
+.icon {
+  background-color: var(--app-background);
+}
+
+.copied_message {
+  color: var(--neon-green);
+  background-color: var(--app-background);
+}
+
+.password::placeholder {
+  color: var(--almost-white);
+}
+
+@media screen and (min-width: 1000px) {
+  .password {
+    font-size: 2rem;
+    width: 80%;
+  }
+
+  .password::placeholder {
+    font-size: 2rem;
+    transform: translateY(15%);
+  }
+
+  .copy_container {
+    align-items: normal;
+    width: 8%;
+  }
+}
+
+.number {
+  color: var(--neon-green);
+}
+
+.password_length_container {
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--app-background);
+  margin-bottom: 1em;
+}
+
+.password_slider_container {
+  background-color: var(--app-background);
+  padding: 1em;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+}
+
+.input_container {
+  position: relative;
+  background-color: var(--app-background);
+}
+
+/***** Track Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--background);
+  height: 0.5rem;
+}
+
+/******** Firefox ********/
+input[type="range"]::-moz-range-track {
+  background: var(--background);
+  height: 0.5rem;
+}
+
+/***** Thumb Styles *****/
+/***** Firefox *****/
+input[type="range"]::-moz-range-thumb {
+  border: none; /*Removes extra border that FF applies*/
+  border-radius: 0; /*Removes default border-radius that FF applies*/
+  background-color: #e6e5ea;
+  height: 10rem;
+  width: 10rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 25px;
+  height: 25px;
+  transform: translateY(10%);
+  border-radius: 50%;
+  overflow: visible;
+  cursor: pointer;
+}
+
+/***** Thumb Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -12px; /* Centers thumb on the track */
+  background-color: #e6e5ea;
+  z-index: 10000;
+  position: relative;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -12px; /* Centers thumb on the track */
+  background-color: #18171f;
+  border: var(--neon-green) 1px solid;
+}
+
+/* Hide the original checkbox input */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+input[type="checkbox"]:hover{
+  border: var(--neon-green) 1px solid;
+  cursor: pointer;
+}
+
+/* Style the checkbox when it is checked */
+input[type="checkbox"]:checked {
+  background-color: var(--neon-green); /* Light green background */
+  border-color: var(--neon-green); /* Border color same as background */
+}
+
+input[type="checkbox"]:checked::before {
+  content: "✔";
+  color: white;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+#progress__bar {
+  width: 0%;
+  transform: translateY(100%);
+  height: 7px;
+  position: absolute;
+  background-color: var(--neon-green);
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+/* Style for the label text next to the checkbox */
+label {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: white;
+}
+
+@media screen and (min-width: 1000px) {
+  #number {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  label {
+    font-size: 1.125rem;
+  }
+}
+
+label {
+  margin-left: 1em;
+}
+
+h2 {
+  font-size: 1rem;
+  background-color: var(--app-background);
+}
+
+.number {
+  font-size: 1.5rem;
+  background-color: var(--app-background);
+}
+
+.options_container {
+  padding: 1em;
+  background-color: var(--app-background);
+}
+
+.options_container > div {
+  background-color: var(--back);
+}
+
+@media screen and (min-width: 1000px) {
+  .options_container > div {
+    margin-top: 1em;
+  }
+}
+
+label {
+  background-color: var(--app-background);
+}
+
+div.password_strength_container {
+  max-width: 95%;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 1em;
+  padding-top: 0.7em;
+  padding-bottom: 0.7em;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background);
+}
+
+.password_strength {
+  display: flex;
+  align-items: center;
+  background-color: var(--background);
+  margin-right: 0.5em;
+}
+
+@media screen and (min-width: 1000px) {
+
+  div.password_strength_container{
+    margin: 2em auto;
+  }
+
+  .password_strength {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+}
+
+.strength_meter {
+  align-content: center;
+  background-color: var(--background);
+  padding-right: 1em;
+}
+
+.password_title {
+  padding-left: 1em;
+  background-color: var(--background);
+  color: var(--dark-gray);
+  margin-right: 1em;
+}
+
+.box {
+  margin-left: 2px;
+  margin-right: 2px;
+  height: 23px;
+  width: 1px;
+  padding-left: 3px;
+  padding-right: 3px;
+  border: 1px white solid;
+  background-color: var(--background);
+}
+
+.strong .box {
+  background-color: green;
+}
+
+button {
+  padding: 1em;
+  width: 93%;
+  margin: 0 auto 1em;
+  background-color: var(--neon-green);
+  color: var(--app-background);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+button:hover {
+  background-color: var(--app-background);
+  color: var(--neon-green);
+  border: var(--neon-green) 1px solid;
+}
+
+.hide {
+  display: none;
+}
